@@ -7,6 +7,9 @@ const { getAgentHandler } = require('./controllers/agentController')
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../index.html'))
+})
 
 app.get('/api/home', getHome)
 app.get('/api/agent', getAgentHandler)
