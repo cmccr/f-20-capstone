@@ -3,7 +3,7 @@ const cors = require('cors')
 const path = require('path')
 const app = express()
 const { getHome, postHomeHandler, deletHomeHandler } = require('./controllers/controller.js')
-const { getAgentHandler } = require('./controllers/agentController')
+const { getAgentHandler } = require('./controllers/agentController.js')
 
 app.use(cors());
 app.use(express.json());

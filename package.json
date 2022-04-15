@@ -2,10 +2,10 @@
   "name": "f-20-foundations-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "server/index.js"
+    "start": "node server/index.js"
   },
   "keywords": [],
   "author": "",
