@@ -1,13 +1,18 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const port =
+const { getHome, postHomeHandler, deletHomeHandler } = require('./controllers/controller.js')
+const { getAgentHandler } = require('./controllers/agentController')
 
 app.use(cors());
 app.use(express.json());
 
-app.get(,getHome)
-app.post(,listHome)
+
+app.get('/api/home', getHome)
+app.get('/api/agent', getAgentHandler)
+app.post('/api/home', postHomeHandler)
+app.delete('/api/home', deletHomeHandler)
+
 
 
 
