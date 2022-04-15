@@ -20,6 +20,6 @@ app.get('/api/agent', getAgentHandler)
 app.post('/api/home', postHomeHandler)
 app.delete('/api/home', deletHomeHandler)
 
-const PORT = process.env.PORT || 4004
+const PORT = process.env.PORT || 4005
 
-app.listen(PORT, () => console.log(`Listening on ${PORT}`))
+app.listen(PORT, () => { console.log(`Listening on ${PORT}`)})
