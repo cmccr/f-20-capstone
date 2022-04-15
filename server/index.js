@@ -12,7 +12,7 @@ app.use(express.static("public"))
 app.use(express.static("files"))
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'))
+    res.sendFile(path.join(__dirname, '../public/landing.html'))
 })
 
 app.get('/api/home', getHome)
