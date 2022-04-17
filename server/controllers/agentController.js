@@ -3,15 +3,16 @@ const agents = [
         id: 1,
         name: "Hannah McCrory",
         email: "hannahmccrory@kw.com",
-        phoneNumber: 8016088518
-      
+        phoneNumber: 8016088518,
+        hours: "9:00am-5:30pm MTN"
     },
 
     {
         id: 2,
         name: "Shane Polevoi",
         email: "shanepolevoi@kw.com",
-        phoneNumber: 8016319954
+        phoneNumber: 8016319954,
+        hours: "9:00am-5:30pm MTN"
     },
 
 ]
