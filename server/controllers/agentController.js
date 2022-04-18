@@ -4,7 +4,9 @@ const agents = [
         name: "Hannah McCrory",
         email: "hannahmccrory@kw.com",
         phoneNumber: 8016088518,
-        hours: "9:00am-5:30pm MTN"
+        hours: "9:00am-5:30pm MTN",
+        img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=440&h=220&q=60",
+        bio: ""
     },
 
     {
@@ -12,7 +14,9 @@ const agents = [
         name: "Shane Polevoi",
         email: "shanepolevoi@kw.com",
         phoneNumber: 8016319954,
-        hours: "9:00am-5:30pm MTN"
+        hours: "9:00am-5:30pm MTN",
+        img: "https://images.unsplash.com/photo-1599229526921-4f29d42b0b41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGllcnxlbnwwfHwwfHw%3D&w=1000&q=80",
+        bio: ""
     },
 
 ]
