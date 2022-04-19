@@ -1,6 +1,15 @@
+header {
+    background-color: aquamarine;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+
 .myHouseLogo {
     position: relative;
-    left: 225px;
+    left: 550px;
     border: 2px solid black; 
     height: 150px;
     width: 400px;
@@ -8,10 +17,24 @@
 
 .kwLogo {
     position: relative;
-    display: flex;
-    left: 50px;
+    left: 640px;
     border: 2px solid black;
     height: 35px;
     width: 175px;
 }
 
+.button-container {
+    margin: 0;
+    position: relative;
+    left: 600px;
+    
+}
+
+#contact, #buy, #sell {
+    position: relative;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: green;
+    color: whitesmoke;
+}
