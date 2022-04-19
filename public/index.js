@@ -62,6 +62,8 @@ function buyHome (evt) {
 function listHome (evt) {
     evt.preventDefault()
     console.log("hit")
+    let homeSeller = document.querySelector('#home-seller-name')
+    let homePhone = document.querySelector('#hoome-seller-phone')
     let homeAddress = document.querySelector('#home-address')
     let homePrice = document.querySelector('#home-price')
     let homeImg = document.querySelector('#home-image')
