@@ -9,7 +9,7 @@ body {
 
 .myHouseLogo {
     position: relative;
-    left: 550px;
+    left: 610px;
     border: 2px solid black; 
     height: 150px;
     width: 400px;
@@ -17,7 +17,7 @@ body {
 
 .kwLogo {
     position: relative;
-    left: 640px;
+    left: 720px;
     border: 2px solid black;
     height: 35px;
     width: 175px;
@@ -26,7 +26,7 @@ body {
 .button-container {
     margin: 0;
     position: relative;
-    left: 600px;
+    left: 665px;
     
 }
 
@@ -38,3 +38,29 @@ body {
     background-color: green;
     color: whitesmoke;
 }
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.5s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+
+
+
