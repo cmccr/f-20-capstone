@@ -31,26 +31,49 @@ function getAgentInfo () {
 }
 
 function buyHome (evt) {
-    axios.get(`${baseURL}`)
+    axios.get(`${baseURL}/api/home`)
     .then(res => {
-        res.da
+        res.data.map(home => {
+            let displayDiv = document.createElement('div')
+            displayDiv.classList.add('card');
+            displayDiv.style.width = '20rem';
+            displayDiv.innerHTML = `
+            <div class = 'card-body bg light'>
+            <h7 class = 'card-title'>Listed Homes</h7>
+            <img src = ${home.img} class = 'home-photo-top' alt = "home photo"/>
+            <h8 class = 'card-subtitle'>${home.address}</h8
+            <p class = 'card-text'>Price - ${home.price}</p>
+            <p class = 'card-text'>Squ-Ft - ${home.squareFeet}</p>
+            <p class = 'card-text'>Lot-Size - ${home.lotSize}</p>
+            <p class = 'card-text'>Beds - ${home.bedrooms}</p>
+            <p class = 'card-text'>Baths - ${home.bathrooms}</p>
+            `
+            displayContainer.appendChild(displayDiv)
+        })
     })
     .catch(err => {
         console.log(err)
     })
 }
 
-// function listHome (evt) {
-//     axios.post(`${baseURL}`)
-//     .then(res => {
-//         res.data.forEach(home => createhome(home))
-//     })
-//     .catch(err => {
-//         console.log(err)
-//     })
-// }
+function listHome (evt) {
+    axios.post(`${baseURL}`)
+    .then(res => {
+        res.data.map(sellHome => {
+            let displayDiv = document.createElement('div');
+            displayDiv.classList.add('card');
+            displayDiv.style.width = '100vh';
+            displayDiv.innerHTML = `
+            
+            `
+        })
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
 
 
 contactYourAgentBtn.addEventListener('click', getAgentInfo)
-// buyerBtn.addEventListener('click', buyHome)
+buyerBtn.addEventListener('click', buyHome)
 // listBtn.addEventListener('click', listHome)
