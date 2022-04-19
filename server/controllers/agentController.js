@@ -27,20 +27,5 @@ module.exports = {
 
     getAgentHandler: (req, res) => {
         res.status(200).send(agents)
-    },
-
-    getHome: (req, res) => {
-        res.status(200).send(homes)
-    },
-    postHomeHandler: (req, res) => {
-        let newHome = req.body
-        newHome.id = globalHomeId
-        if (!("address" in newHome) || newHome.address == "") {
-            res.status(400).send()
-            return
-        }
-        homes.push(newHome)
-        globalHomeId += 1
-        res.status(200).send(homes)
     }
 }

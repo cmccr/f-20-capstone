@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 app.get('/api/home', getHome)
 app.get('/api/agent', getAgentHandler)
 app.post('/api/home', postHomeHandler)
-app.delete('/api/home', deletHomeHandler)
+
 
 const PORT = process.env.PORT || 4005
 

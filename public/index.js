@@ -2,12 +2,14 @@ const contactYourAgentBtn = document.querySelector("#contact")
 const buyerBtn = document.querySelector("#buy")
 const listBtn = document.querySelector("#sell")
 const displayContainer = document.querySelector("#display-container")
+const sellerForm = document.querySelector('#seller-form')
 const baseURL = 'http://localhost:4005'
 
 
 function getAgentInfo () {
     axios.get(`${baseURL}/api/agent`)
     .then(res => {
+        displayContainer.innerHTML = ""
         res.data.map(agent => {
            let displayDiv = document.createElement('div');
            displayDiv.classList.add('card');
@@ -33,6 +35,7 @@ function getAgentInfo () {
 function buyHome (evt) {
     axios.get(`${baseURL}/api/home`)
     .then(res => {
+        displayContainer.innerHTML = ""
         res.data.map(home => {
             let displayDiv = document.createElement('div')
             displayDiv.classList.add('card');
@@ -40,7 +43,7 @@ function buyHome (evt) {
             displayDiv.innerHTML = `
             <div class = 'card-body bg light'>
             <h7 class = 'card-title'>Listed Homes</h7>
-            <img src = ${home.img} class = 'home-photo-top' alt = "home photo"/>
+            <img src = ${home.img} style="height: 10rem;" class = 'home-photo-top' alt = "home photo"/>
             <h8 class = 'card-subtitle'>${home.address}</h8
             <p class = 'card-text'>Price - ${home.price}</p>
             <p class = 'card-text'>Squ-Ft - ${home.squareFeet}</p>
@@ -57,23 +60,43 @@ function buyHome (evt) {
 }
 
 function listHome (evt) {
-    axios.post(`${baseURL}`)
+    evt.preventDefault()
+    console.log("hit")
+    let homeAddress = document.querySelector('#home-address')
+    let homePrice = document.querySelector('#home-price')
+    let homeImg = document.querySelector('#home-image')
+    let homeSqFt = document.querySelector('#home-sqft')
+    let homeLs = document.querySelector('#home-ls')
+    let homeBeds = document.querySelector('#home-beds')
+    let homeBaths = document.querySelector('#home-baths')
+    let body = {
+        img: homeImg.value,
+        address: homeAddress.value,
+        price: homePrice.value,
+        squareFeet: homeSqFt.value,
+        lotSize: homeLs.value,
+        bedrooms: homeBeds.value,
+        bathrooms: homeBaths.value
+    }
+    axios.post(`${baseURL}/api/home`,body)
     .then(res => {
-        res.data.map(sellHome => {
-            let displayDiv = document.createElement('div');
-            displayDiv.classList.add('card');
-            displayDiv.style.width = '100vh';
-            displayDiv.innerHTML = `
-            
-            `
-        })
-    })
-    .catch(err => {
-        console.log(err)
+        img: homeImg.value = ""
+        address: homeAddress.value = ""
+        price: homePrice.value = ""
+        squareFeet: homeSqFt.value = ""
+        lotSize: homeLs.value = ""
+        bedrooms: homeBeds.value = ""
+        bathrooms: homeBaths.value = ""
+        console.log(res.data)
+        alert(res.data)
     })
 }
-
-
-contactYourAgentBtn.addEventListener('click', getAgentInfo)
-buyerBtn.addEventListener('click', buyHome)
-// listBtn.addEventListener('click', listHome)
+if(sellerForm) {
+    sellerForm.addEventListener('submit', listHome)
+}
+if(contactYourAgentBtn) {
+    contactYourAgentBtn.addEventListener('click', getAgentInfo)
+}
+if(buyerBtn) {
+    buyerBtn.addEventListener('click', buyHome)
+}

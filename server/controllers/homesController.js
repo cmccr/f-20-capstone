@@ -67,15 +67,11 @@ module.exports = {
         res.status(200).send(homes)
     },
     postHomeHandler: (req, res) => {
-        let newHome = req.body
-        newHome.id = globalHomeId
-        if (!("address" in newHome) || newHome.address == "") {
-            res.status(400).send()
-            return
-        }
-        homes.push(newHome)
-        globalHomeId += 1
-        res.status(200).send(homes)
+    // const { img, address, price, squareFeet, lotSize, bedrooms, bathrooms } = req.body
+        homes.push(req.body)
+        console.log(homes)
+        globalHomeId++
+        res.status(200).send("Home added successfully, an agent will contact you to verify your information shortly.")
     },
 
     deletHomeHandler: (req, res) => {
