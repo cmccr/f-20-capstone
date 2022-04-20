@@ -44,7 +44,7 @@ function buyHome (evt) {
             <div class = 'card-body bg light'>
             <h7 class = 'card-title'>Listed Homes</h7>
             <img src = ${home.img} style="height: 10rem;" class = 'home-photo-top' alt = "home photo"/>
-            <h8 class = 'card-subtitle'>${home.address}</h8
+            <h8 class = 'card-subtitle'>${home.address}</h8>
             <p class = 'card-text'>Price - ${home.price}</p>
             <p class = 'card-text'>Squ-Ft - ${home.squareFeet}</p>
             <p class = 'card-text'>Lot-Size - ${home.lotSize}</p>
